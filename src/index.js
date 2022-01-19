@@ -1,17 +1,43 @@
 import React from "react";
 import ReactDOM from "react-dom";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
+import { QueryClient, QueryClientProvider } from "react-query";
 
+import MainLayout from "layout/Main";
 import Home from "pages/Home";
+import Post from "pages/Post";
+import Posts from "pages/Posts";
+
+import { Provider as MainProvider } from "contexts/Main";
+import { Provider as ModalProvider } from "contexts/Modal";
+
 import "styles/index.css";
 
 import reportWebVitals from "./reportWebVitals";
 
+const queryClient = new QueryClient();
+
 ReactDOM.render(
   <BrowserRouter>
-    <Routes>
-      <Route path="/" element={<Home />} />
-    </Routes>
+    <QueryClientProvider client={queryClient}>
+      <ModalProvider>
+        <Routes>
+          <Route
+            path="/"
+            element={
+              <MainProvider>
+                <MainLayout />
+              </MainProvider>
+            }
+          >
+            <Route index element={<Home />} />
+            <Route path="posts/:id" element={<Post />} />
+            <Route path="posts" element={<Posts />} />
+            <Route path=":userId/posts" element={<Posts />} />
+          </Route>
+        </Routes>
+      </ModalProvider>
+    </QueryClientProvider>
   </BrowserRouter>,
   document.getElementById("root")
 );

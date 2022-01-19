@@ -1,8 +1,8 @@
-import { useState } from "react";
+// import { useState } from "react";
 import { Link } from "react-router-dom";
 
 const Footer = () => {
-  const [mode, setMode] = useState("auto");
+  // const [mode, setMode] = useState("auto");
 
   return (
     <div className="pt-12">
@@ -144,93 +144,6 @@ const Footer = () => {
                         </svg>
                       </div>
                     </a>
-                  </div>
-                  <div className="relative w-36">
-                    {mode === "auto" && (
-                      <svg
-                        xmlns="http://www.w3.org/2000/svg"
-                        className="absolute inset-0 m-auto ml-3 text-gray-700 dark:text-gray-50 icon icon-tabler icon-tabler-device-laptop"
-                        width={20}
-                        height={20}
-                        viewBox="0 0 24 24"
-                        strokeWidth="1.5"
-                        stroke="currentColor"
-                        fill="none"
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                      >
-                        <path stroke="none" d="M0 0h24v24H0z" fill="none" />
-                        <line x1={3} y1={19} x2={21} y2={19} />
-                        <rect x={5} y={6} width={14} height={10} rx={1} />
-                      </svg>
-                    )}
-                    {mode === "light" && (
-                      <svg
-                        xmlns="http://www.w3.org/2000/svg"
-                        className="absolute inset-0 m-auto ml-3 text-gray-700 dark:text-gray-50 icon icon-tabler icon-tabler-brightness-up"
-                        width={20}
-                        height={20}
-                        viewBox="0 0 24 24"
-                        strokeWidth="1.5"
-                        stroke="currentColor"
-                        fill="none"
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                      >
-                        <path stroke="none" d="M0 0h24v24H0z" fill="none" />
-                        <circle cx={12} cy={12} r={3} />
-                        <line x1={12} y1={5} x2={12} y2={3} />
-                        <line x1={17} y1={7} x2="18.4" y2="5.6" />
-                        <line x1={19} y1={12} x2={21} y2={12} />
-                        <line x1={17} y1={17} x2="18.4" y2="18.4" />
-                        <line x1={12} y1={19} x2={12} y2={21} />
-                        <line x1={7} y1={17} x2="5.6" y2="18.4" />
-                        <line x1={6} y1={12} x2={4} y2={12} />
-                        <line x1={7} y1={7} x2="5.6" y2="5.6" />
-                      </svg>
-                    )}
-                    {mode === "dark" && (
-                      <svg
-                        xmlns="http://www.w3.org/2000/svg"
-                        className="absolute inset-0 m-auto ml-3 text-gray-700 dark:text-gray-50 icon icon-tabler icon-tabler-moon"
-                        width={20}
-                        height={20}
-                        viewBox="0 0 24 24"
-                        strokeWidth="1.5"
-                        stroke="currentColor"
-                        fill="none"
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                      >
-                        <path stroke="none" d="M0 0h24v24H0z" fill="none" />
-                        <path d="M12 3c.132 0 .263 0 .393 0a7.5 7.5 0 0 0 7.92 12.446a9 9 0 1 1 -8.313 -12.454z" />
-                      </svg>
-                    )}
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      className="pointer-events-none absolute inset-0 m-auto mr-3 text-gray-700 dark:text-gray-50 icon icon-tabler icon-tabler-chevron-down"
-                      width={16}
-                      height={16}
-                      viewBox="0 0 24 24"
-                      strokeWidth="1.5"
-                      stroke="currentColor"
-                      fill="none"
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                    >
-                      <path stroke="none" d="M0 0h24v24H0z" fill="none" />
-                      <polyline points="6 9 12 15 18 9" />
-                    </svg>
-
-                    <select
-                      value={mode}
-                      onChange={(e) => setMode(e.target.value)}
-                      className="w-full focus:outline-none pl-10 py-2 appearance-none flex items-center h-12 border rounded border-gray-700 dark:border-gray-50 text-sm leading-5 dark:bg-gray-900 dark:text-gray-50"
-                    >
-                      <option value="auto">Auto</option>
-                      <option value="light">Light</option>
-                      <option value="dark">Dark</option>
-                    </select>
                   </div>
                 </div>
               </div>

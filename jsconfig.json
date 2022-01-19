@@ -6,7 +6,8 @@
           "containers/*": ["./containers"],
           "contexts/*": ["./contexts"],
           "routes/*": ["./routes"],
-          "tests/*": ["./tests"]
+          "tests/*": ["./tests"],
+          "utils/*": ["./utils"]
         }
     },
     "exclude": ["node_modules"]
